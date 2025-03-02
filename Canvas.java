@@ -6,7 +6,7 @@ import java.awt.geom.*;
  * Class Canvas - a class to allow for simple graphical 
  * drawing on a canvas.
  * 
- * @author Michael Kölling (mik)
+ * @author Michael Kolling (mik)
  * @author Bruce Quig
  *
  * @version 2016.02.29
@@ -27,7 +27,7 @@ public class Canvas
      */
     public Canvas(String title)
     {
-        this(title, 300, 300, Color.white);
+        this(title, 300, 300, Color.white);        
     }
 
     /**
@@ -57,7 +57,6 @@ public class Canvas
         canvas.setPreferredSize(new Dimension(width, height));
         backgroundColor = bgColor;
         frame.pack();
-        setVisible(true);
     }
 
     /**
@@ -115,9 +114,6 @@ public class Canvas
     /**
      * Fill the internal dimensions of the given circle with the current 
      * foreground color of the canvas.
-     * @param  xPos  The x-coordinate of the circle center point
-     * @param  yPos  The y-coordinate of the circle center point
-     * @param  diameter  The diameter of the circle to be drawn
      */
     public void fillCircle(int xPos, int yPos, int diameter)
     {
@@ -316,8 +312,6 @@ public class Canvas
         Image oldImage = canvasImage;
         canvasImage = canvas.createImage(width, height);
         graphic = (Graphics2D)canvasImage.getGraphics();
-        graphic.setColor(backgroundColor);
-        graphic.fillRect(0, 0, width, height);
         graphic.drawImage(oldImage, 0, 0, null);
         frame.pack();
     }
